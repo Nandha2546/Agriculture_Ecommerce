@@ -11,7 +11,7 @@ if(isset($_POST ['farmerlogin'])) {
 
 
   $farmerquery = "SELECT * from `farmerlogin` where email='".$farmer_email."' and password='".$farmer_password."' ";
-  $result = mysqli_query($conn, $farmerquery);
+  echo $farmerquery;exit;$result = mysqli_query($conn, $farmerquery);
   $rowcount=mysqli_num_rows($result);
   if ($rowcount==true) {
     $_SESSION['farmer_login_user']=$farmer_email; // Initializing Session
